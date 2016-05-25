@@ -14,6 +14,33 @@
 
   <body>
 
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Investment Starter</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a href="#">Analyze stock</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Wisdom</a></li>
+          <li class="has-dropdown">
+            <a href="#">Account (Coming Soon)</a>
+            <ul class="dropdown">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Logout</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </section>
+    </nav>
+
     <%= yield %>
 
   </body>
