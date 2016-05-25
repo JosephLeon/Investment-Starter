@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'formtastic', '~> 3.0'
 gem 'rubocop', '~> 0.40.0', require: false
 gem 'ransack'
+gem 'whenever'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
