@@ -14,34 +14,49 @@
 
   <body>
 
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Investment Starter</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li><a href="#">Analyze stock</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">Wisdom</a></li>
-          <li class="has-dropdown">
-            <a href="#">Account (Coming Soon)</a>
-            <ul class="dropdown">
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Logout</a></li>
-              <li><a href="#">Settings</a></li>
-            </ul>
+    <div class="contain-to-grid fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">A Smart Trade</a></h1>
           </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
 
-      </section>
-    </nav>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <!-- <li><a href="#">Analyze stock</a></li> -->
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Wisdom</a></li>
+            <!-- <li class="has-dropdown">
+              <a href="#">Account (Coming Soon)</a>
+              <ul class="dropdown">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Logout</a></li>
+                <li><a href="#">Settings</a></li>
+              </ul>
+             </li>-->
+          </ul>
 
-    <%= yield %>
+        </section>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="row">
+        <div class="medium-12 columns">
+          <h5>Disclaimer</h5>
+          <p class="small">This application is not investment advice and no information found in or associated with this site should be viewed as investment advice. There is the potential to lose an almost infinite amount of money investing and all losses are of your own action and thought alone. The information contained here is meant only for learning and discussion purposes. We take no responsibility for any action, decision or lack of action or decision made based on any content or discussion associated or even remotely connected to asmart.trade or any organization or group associated with asmart.trade.</p>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
