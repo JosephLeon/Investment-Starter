@@ -1,4 +1,21 @@
 <div class="row">
+	<div class="medium-12">
+		<table>
+		  <tr>
+		    <th>Link</th>
+		    <th>Title</th>
+		    <th>Description</th>
+		  </tr>
+		 
+		  <% @resources.each do |resource| %>
+		    <tr>
+		      <td><%= resource.link %></td>
+		      <td><%= resource.title %></td>
+		      <td><%= resource.description %></td>
+		    </tr>
+		  <% end %>
+		</table>
+	</div>
 	<div class="medium-6 small-12 columns">
 		<h3>Knowledge</h3>
 		<ul>

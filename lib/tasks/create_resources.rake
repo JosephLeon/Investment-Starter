@@ -13,8 +13,12 @@ namespace :resources do
 
     for site in sites do
     	page = Nokogiri::HTML(open(site))
-    	puts page.css('title')
-    	puts page.css('meta[name="description"]')
+    	pagetitle = page.css('title').text
+    	description = page.css('meta[name="description"]').text
+
+    	@resource = Resource.create(link: site, title: pagetitle, description: description)
+
+    	puts @resource
     end
   end
 
