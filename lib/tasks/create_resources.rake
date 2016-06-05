@@ -9,14 +9,24 @@ namespace :resources do
     sites = [
     	'http://www.nasdaq.com/',
     	'http://finance.yahoo.com/',
+    	'http://www.cmegroup.com/trading/interest-rates/countdown-to-fomc.html',
+    	# 'http://www.bankrate.com/finance/federal-reserve/what-did-federal-reserve-say.aspx',
+    	'http://www.investopedia.com/',
+    	'http://longforecast.com/brent/crude-oil-forecast-for-2015-2016-and-2017.html',
+    	'https://www.earningswhispers.com/calendar',
     ]
 
     for site in sites do
     	page = Nokogiri::HTML(open(site))
     	pagetitle = page.css('title').text
     	
-    	description_chunk = page.css("meta[name='description']").first 
-    	description = description_chunk['content']
+    	description_chunk = page.css("meta[name='description']").first
+
+    	description = ''
+    	unless description_chunk['content'].nil?
+    		description = description_chunk['content']
+    		puts description
+    	end
 
     	if Resource.where(:link => site).blank?
     	  resource = Resource.create(link: site, title: pagetitle, description: description)
@@ -24,8 +34,7 @@ namespace :resources do
     	  # skip this site
     	end
 
-    	# @output = "" + resource + " reasource was created!"
-    	# puts @output
+    	
     end
   end
 
