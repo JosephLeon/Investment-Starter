@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604234331) do
+ActiveRecord::Schema.define(version: 20160605234810) do
+
+  create_table "gspcs", force: :cascade do |t|
+    t.date     "date"
+    t.decimal  "open"
+    t.decimal  "close"
+    t.decimal  "high"
+    t.decimal  "low"
+    t.integer  "volume"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "resources", force: :cascade do |t|
     t.string   "link"
