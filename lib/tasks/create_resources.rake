@@ -14,15 +14,23 @@ namespace :resources do
     for site in sites do
     	page = Nokogiri::HTML(open(site))
     	pagetitle = page.css('title').text
-    	description = page.css('meta[name="description"]').text
+    	
+    	description_chunk = page.css("meta[name='description']").first 
+    	description = description_chunk['content']
 
-    	@resource = Resource.create(link: site, title: pagetitle, description: description)
+    	if Resource.where(:link => site).blank?
+    	  resource = Resource.create(link: site, title: pagetitle, description: description)
+    	else
+    	  # skip this site
+    	end
 
-    	puts @resource
+    	# @output = "" + resource + " reasource was created!"
+    	# puts @output
     end
   end
 
   task delete: :environment do
   	puts 'Ran rake task to clean out the resources table.'
+  	Resource.delete_all
   end
 end
