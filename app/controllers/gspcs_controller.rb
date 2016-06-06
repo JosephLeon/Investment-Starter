@@ -1,5 +1,5 @@
 class GspcsController < ApplicationController
 	def index
-		@gpscs = Gspc.all
+		@gspcs = Gspc.all
 	end
 end

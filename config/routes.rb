@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'resources/index'
+  get 'gspcs/index'
 
   root 'get_started#index'
 
