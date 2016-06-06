@@ -8,6 +8,7 @@
 		    <th>Close</th>
 		    <th>High</th>
 		    <th>Low</th>
+		    <th>Volume</th>
 		  </tr>
 		 
 		  <% @gspcs.each do |gspc| %>
@@ -17,10 +18,11 @@
 		      <td><%= gspc.close %></td>
 		      <td><%= gspc.high %></td>
 		      <td><%= gspc.low %></td>
+		      <td><%= gspc.volume %></td>
 		    </tr>
 		  <% end %>
 		</table>
-		
+
 		<h1>Resources</h1>
 		<table>
 		  <tr>
