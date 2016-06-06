@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605234810) do
+ActiveRecord::Schema.define(version: 20160606001339) do
 
   create_table "gspcs", force: :cascade do |t|
     t.date     "date"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20160605234810) do
     t.decimal  "close"
     t.decimal  "high"
     t.decimal  "low"
-    t.integer  "volume"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.decimal  "adj"
+    t.integer  "volume",     limit: 8
   end
 
   create_table "resources", force: :cascade do |t|

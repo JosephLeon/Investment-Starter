@@ -4,7 +4,7 @@ namespace :gspc do
 	task import: :environment do
 		puts 'Importing all GSPC daily quotes from csv'
 
-		csv_text = File.read(Rails.root + 'lib/assets/sp500-may2015-may2016.csv')
+		csv_text = File.read(Rails.root + 'lib/assets/sp500-may2015-may2016-headers.csv')
 		csv = CSV.parse(csv_text, headers: true)
 		csv.each do |row|
 			puts row
