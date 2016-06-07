@@ -1,22 +1,22 @@
 class GspcsController < ApplicationController
-	def index
-		@gspcs = Gspc.all
-		@latest5gspcrecords = Gspc.take(5)
+  def index
+    @gspcs = Gspc.all
+    @latest5gspcrecords = Gspc.take(5)
 
-		@latest5dates = []
-		@latest5closes = []
-		@latest5opens = []
-		@latest5gspcrecords.each do |gspc|
-			@latest5dates << gspc.date
-			@latest5closes << gspc.close
-			@latest5opens << gspc.open
-		end
+    @latest5dates = []
+    @latest5closes = []
+    @latest5opens = []
+    @latest5gspcrecords.each do |gspc|
+      @latest5dates << gspc.date
+      @latest5closes << gspc.close
+      @latest5opens << gspc.open
+    end
 
-		@data = {
-	    labels: @latest5dates,
-	    datasets: [
-	    	{
-	    		label: "My Firstest dataset",
+    @data = {
+      labels: @latest5dates,
+      datasets: [
+        {
+          label: "My Firstest dataset",
           fillColor: "rgba(220,220,220,0.0)",
           strokeColor: "rgba(15,162,142,1)",
           pointColor: "rgba(220,220,220,1)",
@@ -24,7 +24,7 @@ class GspcsController < ApplicationController
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
           data: @latest5closes,
-	    	},
+        },
         {
           label: "My First dataset",
           fillColor: "rgba(220,220,220,0.0)",
@@ -45,8 +45,13 @@ class GspcsController < ApplicationController
           pointHighlightStroke: "rgba(220,220,220,1)",
           data: @latest5closes,
         }
-     	]
-		}
-		@options = {}
-	end
+      ]
+    }
+    @options = {}
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @gspcs.to_json }
+    end
+  end
 end
