@@ -13,6 +13,7 @@ gem 'rubocop', '~> 0.40.0', require: false
 gem 'ransack'
 gem 'whenever'
 gem 'foundation-rails'
+gem 'chartjs-ror'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

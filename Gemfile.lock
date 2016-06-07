@@ -46,6 +46,8 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.4)
+    chartjs-ror (2.2.0)
+      rails (>= 3.1)
     chronic (0.10.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -198,6 +200,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
+  chartjs-ror
   formtastic (~> 3.0)
   foundation-rails
   jbuilder (~> 2.0)
