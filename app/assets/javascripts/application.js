@@ -15,5 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require Chart
+//= require excanvas
 
 $(function(){ $(document).foundation(); });
