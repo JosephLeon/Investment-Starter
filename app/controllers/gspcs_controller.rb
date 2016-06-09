@@ -1,19 +1,19 @@
 class GspcsController < ApplicationController
   def index
     @gspcs = Gspc.all
-    @latest5gspcrecords = Gspc.take(5)
+    @latestgspcrecords = Gspc.take(20)
 
-    @latest5dates = []
-    @latest5closes = []
-    @latest5opens = []
-    @latest5gspcrecords.each do |gspc|
-      @latest5dates << gspc.date
-      @latest5closes << gspc.close
-      @latest5opens << gspc.open
+    @latestdates = []
+    @latestcloses = []
+    @latestopens = []
+    @latestgspcrecords.each do |gspc|
+      @latestdates << gspc.date
+      @latestcloses << gspc.close
+      @latestopens << gspc.open
     end
 
     @data = {
-      labels: @latest5dates,
+      labels: @latestdates,
       datasets: [
         {
           label: "My Firstest dataset",
@@ -23,7 +23,7 @@ class GspcsController < ApplicationController
           pointStrokeColor: "#fff",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
-          data: @latest5closes,
+          data: @latestcloses,
         },
         {
           label: "My First dataset",
@@ -33,7 +33,7 @@ class GspcsController < ApplicationController
           pointStrokeColor: "#fff",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
-          data: @latest5opens,
+          data: @latestopens,
         },
         {
           label: "My Second dataset",
@@ -43,7 +43,7 @@ class GspcsController < ApplicationController
           pointStrokeColor: "#fff",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
-          data: @latest5closes,
+          data: @latestcloses,
         }
       ]
     }
